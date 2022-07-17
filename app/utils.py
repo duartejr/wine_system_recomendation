@@ -7,9 +7,10 @@ from joblib import load
 
 cwd = os.getcwd() # The current work directory
 classifier = load(f'{cwd}/app/classifier.joblib') # git
-#classifier = load(f'{cwd}/classifier.joblib') # local
 vectorizer = load(f'{cwd}/app/vectorizer.joblib') # git
-#vectorizer = load(f'{cwd}/vectorizer.joblib') # local
+
+# classifier = load(f'{cwd}/classifier.joblib') # local
+# vectorizer = load(f'{cwd}/vectorizer.joblib') # local
 
 system_data = pd.read_csv('https://raw.githubusercontent.com/duartejr/wine_system_recomendation/main/data/processed/wines_recomendation_system.csv')
 
@@ -66,7 +67,7 @@ def recomendation(wine, user_data):
     Returns:
         dataframe: A daframe with the wines more related with the informed wine considering the description.
     """
-    test = system_data.query(f"title == '{wine}'")
+    test = system_data.query(f'title == "{wine}"')
     user_count_vec = vectorizer.transform(test.description)
     NNs_clf = classifier.kneighbors(user_count_vec, return_distance=True)
     answer = user_data.loc[NNs_clf[1][0, :]]

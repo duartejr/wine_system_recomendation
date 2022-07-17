@@ -1,10 +1,11 @@
 import streamlit as st
 from utils import load_data, select_data, recomendation
 
-# -- Loading the data
+# -- Loading the data ----------------------------------------------
 data = load_data()
+# ------------------------------------------------------------------
 
-# -- Sidebar --
+# -- Sidebar -------------------------------------------------------
 # Buttons to select the selection criteria
 sort_by = st.sidebar.radio("Sort wines by:",
                            ('points', 'price'))
@@ -15,11 +16,11 @@ order = st.sidebar.radio('Order:',
 
 # Box to select a list of styles to filter the data
 styles = st.sidebar.multiselect('Select some style of wine.',
-                                data['style'].unique())
+                                sorted(data['style'].unique()))
 
 # Box to select a list of countries to filter the data
 countries = st.sidebar.multiselect('Select some contries.',
-                                   data['country'].unique())
+                                   sorted(data['country'].unique()))
 
 # Slider to select the points range to filter the data
 points = st.sidebar.slider('Interval of avaliation.', 80, 100, (80, 100))
@@ -35,9 +36,9 @@ max_price = st.sidebar.number_input('Maximum price:',
                                     min_value = min_price,
                                     max_value = data.price.max(),
                                     value = data.price.max())
+# ----------------------------------------------------------------
 
-
-# -- Main page -- 
+# -- Main page --------------------------------------------------- 
 st.title('WINER your personal sommelier.') # Main page title
 
 # Set styles in the case when nothing is selected in the sidebar
