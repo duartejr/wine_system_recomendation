@@ -6,11 +6,11 @@ from joblib import load
 
 clf = load('https://github.com/duartejr/wine_system_recomendation/blob/main/app/classifier.joblib') 
 vetorizador = load('https://github.com/duartejr/wine_system_recomendation/blob/main/app/vectorizer.joblib')
-system_data = pd.read_csv('../data/processed/wines_recomendation_system.csv')
+system_data = pd.read_csv('https://raw.githubusercontent.com/duartejr/wine_system_recomendation/main/data/processed/wines_recomendation_system.csv')
 
 @st.cache
 def load_data():
-    data = pd.read_csv(f'../data/processed/wines_user_consult.csv')
+    data = pd.read_csv(f'https://raw.githubusercontent.com/duartejr/wine_system_recomendation/main/data/processed/wines_user_consult.csv')
     data = data.drop_duplicates()
     return data
 
