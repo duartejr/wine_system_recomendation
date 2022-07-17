@@ -7,7 +7,6 @@ from utils import load_data, select_data, recomendation
 system_data = pd.read_csv('https://github.com/duartejr/wine_system_recomendation/blob/main/data/processed/wines_recomendation_system.csv?raw=true')
 st.write(system_data.head())
 
-st.write(os.listdir(f'{cwd}/app'))
 #clf = load('https://github.com/duartejr/wine_system_recomendation/blob/main/app/classifier.joblib')
 # st.title('WINER your personal sommelier.')
 # data_load_state = st.text('Loading data...')
