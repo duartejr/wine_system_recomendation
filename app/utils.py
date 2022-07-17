@@ -3,9 +3,11 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from joblib import load
+import os
 
-clf = load('classifier.joblib') 
-vetorizador = load('vectorizer.joblib')
+cwd = os.getcwd()
+clf = load(f'{cwd}/app/classifier.joblib')
+vetorizador = load(f'{cwd}/app/vectorizer.joblib')
 system_data = pd.read_csv('https://raw.githubusercontent.com/duartejr/wine_system_recomendation/main/data/processed/wines_recomendation_system.csv')
 
 @st.cache
