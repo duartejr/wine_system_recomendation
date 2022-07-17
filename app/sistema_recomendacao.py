@@ -39,7 +39,7 @@ max_price = st.sidebar.number_input('Maximum price:',
 # ----------------------------------------------------------------
 
 # -- Main page --------------------------------------------------- 
-st.title('WINER your personal sommelier.') # Main page title
+st.title('WYNER your personal sommelier.') # Main page title
 
 # Set styles in the case when nothing is selected in the sidebar
 if not styles:
