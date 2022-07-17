@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from utils import load_data, select_data, recomendation
+#from utils import load_data, select_data, recomendation
 import numpy as np
 from joblib import load
 
