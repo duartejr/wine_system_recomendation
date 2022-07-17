@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from joblib import load
 
-clf = load('https://github.com/duartejr/wine_system_recomendation/blob/9e5b2e7cd98b5ede3055bb96ba98b036dd3dd659/app/classifier.joblib') 
-vetorizador = load('https://github.com/duartejr/wine_system_recomendation/blob/9e5b2e7cd98b5ede3055bb96ba98b036dd3dd659/app/vectorizer.joblib')
+clf = load('classifier.joblib') 
+vetorizador = load('vectorizer.joblib')
 system_data = pd.read_csv('https://raw.githubusercontent.com/duartejr/wine_system_recomendation/main/data/processed/wines_recomendation_system.csv')
 
 @st.cache

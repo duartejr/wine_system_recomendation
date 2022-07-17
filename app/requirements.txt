@@ -1,4 +1,5 @@
-pandas
-numpy
-sklearn
-joblib
+python 3.8.10
+pandas 1.3.4
+numpy 1.21.6
+sklearn 1.0.2
+joblib 1.1.0
