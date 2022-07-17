@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 #from utils import load_data, select_data, recomendation
 
-system_data = pd.read_csv('../data/processed/wines_recomendation_system.csv')
-
+system_data = pd.read_csv('https://github.com/duartejr/wine_system_recomendation/blob/main/data/processed/wines_recomendation_system.csv?raw=true')
+st.write(system_data.head())
 # st.title('WINER your personal sommelier.')
 # data_load_state = st.text('Loading data...')
 # data = load_data()
