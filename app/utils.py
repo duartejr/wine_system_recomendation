@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from joblib import load
 
-clf = load('classifier.joblib') 
-vetorizador = load('vectorizer.joblib')
+clf = load('./classifier.joblib') 
+vetorizador = load('./vectorizer.joblib')
 system_data = pd.read_csv('../data/processed/wines_recomendation_system.csv')
 
 @st.cache
