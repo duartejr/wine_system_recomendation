@@ -19,7 +19,7 @@ styles = st.sidebar.multiselect('Select some style of wine.',
                                 sorted(data['style'].unique()))
 
 # Box to select a list of countries to filter the data
-countries = st.sidebar.multiselect('Select some contries.',
+countries = st.sidebar.multiselect('Select some countries.',
                                    sorted(data['country'].unique()))
 
 # Slider to select the points range to filter the data
