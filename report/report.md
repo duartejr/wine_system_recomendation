@@ -9,7 +9,11 @@
 
 # WYNER - Sistema de Recomendação de Vinhos
 
-![Nuvem de palavras mais comuns para se referir aos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/wines_description_wordcloud.png?raw=true “Nuvem de palavras mais comuns para se referir aos vinhos”)
+![Nuvem de palavras mais comuns para se referir aos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/wines_description_wordcloud.png?raw=true "Nuvem de palavras mais comuns para se referir aos vinhos")
+
+## Link de acesso ao aplicatiVO WYNER
+
+https://tinyurl.com/4kztht79
 
 ## Introdução
 
@@ -23,11 +27,11 @@ WYNER é um sistema de recomendação de vinhos. Este sistema utiliza a descriç
 
 O usuário pode filtrar o conteúdo através dos atributos: país de origem (`country`), nota de avaliação (`points`), preço sugerido (`price`), estilo de vinho (`style`). 
 
-![tela principal do WYNER](https://i.imgur.com/k07RHdW.png “Tela principal do WYNER”)
+![tela principal do WYNER](https://i.imgur.com/k07RHdW.png "Tela principal do WYNER")
 
 Após o usuário selecionar um vinho do catálogo o sistema retorna uma lista com os 10 títulos cujas descrições mais se assemelham à descrição do vinho selecionado.
 
-![Lista de vinhos](https://imgur.com/CUmMlNZ.png “Lista de vinhos”)
+![Lista de vinhos](https://imgur.com/CUmMlNZ.png "Lista de vinhos")
 
 A semelhança entre as descrições é calculada utilizando a combinação do `CountVectorizer` (para extração de características) e o KNN (para o cálculo da semelhança de acordo com as características extraídas).
 

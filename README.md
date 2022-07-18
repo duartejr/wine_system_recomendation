@@ -30,7 +30,7 @@ O dataset contém as seguintes variáveis
 | taster_twitter_handle | Perfil do Twitter do avaliador. |
 | title | O título da avaliação do vinho, que geralmente contém a safra. |
 | variety | O tipo de uvas utilizadas para produzir o vinho. |
-| winery | A vinícula que produziu o vinho. |
+| winery | A vinícola que produziu o vinho. |
 
 #### 2.2 Tratamento de valores nulos
 
@@ -38,24 +38,24 @@ Na base de dados original foram encontradas os seguintes registro de valores nul
 
 | Variável | Quantidade de nulos | Percentual de nulos | 
 | -- | -- | -- |
-| Unnamed: 0 | 0 | 0.00 % |
-| country | 63 | 0.05 % |
-| description | 0 | 0.00 % |
-| designation | 37465 | 28.83 % |
-| points | 0 | 0.00 % |
-| price | 8996 | 6.92 % |
-| province | 63 | 0.05 % |
-| region_1 | 21247 | 16.35 % |
-| region_2 | 79460 | 61.14 % |
-| taster_name | 26244 | 20.19 % |
-| taster_twitter_handle | 31213 | 24.02 % |
-| title | 0 | 0.00 % |
-| variety | 1 | 0.00 % |
-| winery | 0 | 0.00 % |
+| Unnamed: 0 | 0 | 0,00 % |
+| country | 63 | 0,05 % |
+| description | 0 | 0,00 % |
+| designation | 37465 | 28,83 % |
+| points | 0 | 0,00 % |
+| price | 8996 | 6,92 % |
+| province | 63 | 0,05 % |
+| region_1 | 21247 | 16,35 % |
+| region_2 | 79460 | 61,14 % |
+| taster_name | 26244 | 20,19 % |
+| taster_twitter_handle | 31213 | 24,02 % |
+| title | 0 | 0,00 % |
+| variety | 1 | 0,00 % |
+| winery | 0 | 0,00 % |
 
 As colunas `Unnamed:0 `, `designation`, `region_1` e `region_2` foram removidas da base de dados do modelo de recomendação. Pois, estas variáveis além de terem um quantitativo expressivo de falhas e inviabilidade para preenchimento das mesmas não apresentam informação relevante para o modelo de recomendação.
 
-Foram removidos os registros que não tinham informação do país de origem e da variedade de uvas utilizada para a produção do vinho. As falhas na coluna de preços foram preenchidas com o valor médio dos preços, já que o quantitativo de falhas nesta coluna não é tão expressivo apenas 6.92%.
+Foram removidos os registros que não tinham informação do país de origem e da variedade de uvas utilizada para a produção do vinho. As falhas na coluna de preços foram preenchidas com o valor médio dos preços, já que o quantitativo de falhas nesta coluna não é tão expressivo apenas 6,92%.
 
 As duas colunas referentes aos avaliadores também foram removidas da base de dados utilizada para alimentar o sistema de recomendação.
 
@@ -73,11 +73,11 @@ O vinho mais caro do dataset é o Château les Ormes Sorbet 2013 Médoc. Este vi
 
 ##### 2.3.2 Qual o vinho mais barato?
 
-O vinho mais barato do dataset é o Bandit NV Chardonnay (California). Ele é produzido na Califórina nos Estados Unidos. Têm um preço sugerido de U$S 4.00 e sua avaliação é de 86 pontos. A variedade de uvas utilizada é a Merlot e a vinícola é a Bandit.
+O vinho mais barato do dataset é o Bandit NV Chardonnay (California). Ele é produzido na Califórnia nos Estados Unidos. Têm um preço sugerido de U$S 4.00 e sua avaliação é de 86 pontos. A variedade de uvas utilizada é a Merlot e a vinícola é a Bandit.
 
 ##### 2.3.3 Qual o especialista avaliou mais vinhos?
 
-O especialista com a maior quantidade de registros avaliados no dataset é o Roger Voss. Ele avaliou um total de 23558 títulos dando uma nota média de 88.73.
+O especialista com a maior quantidade de registros avaliados no dataset é o Roger Voss. Ele avaliou um total de 23.558 títulos dando uma nota média de 88.73.
 
 ##### 2.3.4 Qual a região possui os vinhos com a melhor média de avaliação?
 
@@ -85,7 +85,7 @@ A província de Südburgenland na Áustria têm a melhor avaliação média, 94 
 
 ##### 2.3.5 Qual a província têm os vinhos com a menor média de preços?
 
-Os vinhos produzidos em Viile Timisului na Romênia têm a menor média de preços. Contudo no dataset consta apenas um único exemplar de vinho produzido nesta região que é o Cramele Recas de 2014 cujo preço sugerido é de U$S 7.00.
+Os vinhos produzidos em Viile Timisului na Romênia têm a menor média de preços. Contudo no dataset consta apenas um único exemplar de vinho produzido nesta região que é o Cramele Recas de 2014 cujo preço sugerido é de U$S 7,00.
 
 ##### 2.3.6 Quais os vinhos com as melhores e piores avaliações?
 
@@ -113,7 +113,7 @@ Vinhos tintos (`Red`) são o estilo mais comum no dataset em seguida estão os b
 
 ##### 2.3.10 Distribuição dos preços dos vinhos
 
-Os preços de vinhos variam entre U$S 4.00 e U$S 3300.00. Porém a distribuição não é uniforme com a maioria dos preços concentrada abaixo dos U$S 100.00. Para poder visualizar melhor a distribuição dos preços (gráfico abaixo) foi utilizada a escala logarítmica no eixo X. O pico apresentado no gráfico corresponde a preços em torno de U$S 35.00.
+Os preços de vinhos variam entre U$S 4,00 e U$S 3.300,00. Porém a distribuição não é uniforme com a maioria dos preços concentrada abaixo dos U$S 100,00. Para poder visualizar melhor a distribuição dos preços (gráfico abaixo) foi utilizada a escala logarítmica no eixo X. O pico apresentado no gráfico corresponde a preços em torno de U$S 35,00.
 ![Distribuição dos preços dos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_prices.png?raw=true "Distribuição dos preços dos vinhos")
 
 ##### 2.3.11 Distribuição das notas dos vinhos
@@ -139,7 +139,37 @@ Foram removidos da base de dados todos os títulos que não foram classificados 
 
 #### 3.2 Algoritmos de recomendação
 
-#### 3.2.1 Tfif Vectorizer
+O algoritmo de recomendação foi desenvolvido utilizando-se como referência o seguinte artigo: https://medium.com/@armandj.olivares/building-nlp-content-based-recommender-systems-b104a709c042
+
+#### 3.2.1 [Tfidf Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer)
+
+Transforma uma matriz de contagem em uma representação tf ou tf-idf normalizada.
+Tf significa "frequência do termo" enquanto tf-idf significa "frequência do termo vezes o inverso da frequência no documento". Este é um esquema de ponderação de termos comum na recuperação de informações, que também encontrou bom uso na classificação de documentos. (Fonte: Scikit Learn)
+
+O objetivo de usar tf-idf em vez das frequências brutas de ocorrência de um token em um determinado documento é reduzir o impacto de tokens que ocorrem com muita frequência em um determinado corpus e, portanto, são empiricamente menos informativos do que recursos que ocorrem em um determinado corpus. pequena fração do corpus de treinamento. (Fonte: [Scikit Learn](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer))
+r
+#### 3.2.2 [Count Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorize)
+
+Converte uma coleção de documentos de texto em uma matriz de contagens de token. Essa implementação produz uma representação esparsa das contagens usando scipy.sparse.csr_matrix. Se não for informado um dicionário a priori e não for utilizado um analisador que faça algum tipo de seleção de recursos, o número de recursos será igual ao tamanho do vocabulário encontrado pela análise dos dados. (Fonte: [Scikit Learn](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorize))
+
+### 3.2.3 [KNN](https://scikit-learn.org/stable/modules/neighbors.html)
+
+KNN é a abreviação de K Nearest Neighbors (K Vizinhos mais próximos). Através de uma métrica de distância (aqui a utilizada foi a cosseno) o método identifica quais os registros mais próximos daquele que está sendo utilizado como referência.
+
+### 3.3 Avaliação dos modelos de recomendação
+
+Os dois modelos foram avaliados pela média das distâncias produzidas em um conjunto de teste. Neste caso quanto menor a média das distâncias melhor será o modelo. Para a métrica cosseno a menor distância possível é 0 (zero) e a maior é 1. O modelo utilizando o Tfidf Vectorizer produziu uma distância média de 0,68 e o modelo utilizando o Count Vectorizer teve uma distância média de 0,57. Portanto, para este caso, o Count Vectorizer se saiu ligeiramente melhor que o Tfidf e por isto foi o método utilizado para a produção do aplicativo de recomendação.
 
 ### 4. Aplicativo
 
+O aplicativo WYNER foi produzido com o objetivo de poder testar o sistema de recomendação criado. Ele foi desenvolvido utilizando a plataforma do streamlit e pode ser acessado pelo seguinte link: https://tinyurl.com/4kztht79.
+
+WYNER é um sistema de recomendação de vinhos. Este sistema utiliza a descrição de diversos títulos de vinhos para realizar a recomendação dos vinhos mais semelhantes entre si. A base de dados do WYNER conta com 117.236 títulos diferentes.
+
+O usuário pode filtrar o conteúdo através dos atributos: país de origem (`country`), nota de avaliação (`points`), preço sugerido (`price`), estilo de vinho (`style`). 
+
+![tela principal do WYNER](https://i.imgur.com/k07RHdW.png "Tela principal do WYNER")
+
+Após o usuário selecionar um vinho do catálogo o sistema retorna uma lista com os 10 títulos cujas descrições mais se assemelham à descrição do vinho selecionado.
+
+![Lista de vinhos](https://imgur.com/CUmMlNZ.png "Lista de vinhos")
