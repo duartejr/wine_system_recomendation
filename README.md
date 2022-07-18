@@ -1,13 +1,12 @@
 # WYNER - Sistema de Recomendação de Vinhos
 
-## Relatório
 
 ### 1. Descrição
 WYNER é um sistema de recomendação de vinhos. Este sistema utiliza a descrição de diversos títulos de vinhos para realizar a recomendação dos vinhos mais semelhantes entre si. A base de dados do WYNER conta com 117236 títulos diferentes.
 
 O usuário pode filtrar o conteúdo através dos atributos: país de origem (`country`), nota de avaliação (`points`), preço sugerido (`price`), estilo de vinho (`style`). Após o usuário selecionar um vinho do catálogo o sistema retorna uma lista com os 10 cujas descrições mais se assemelham à descrição do vinho selecionado. 
 
-A semelhança entre as descrições é calculada utilizando a combinação do `CountVectorizer` (para extração de características) e o Knn (para o cálculo da semelhança de acordo com as características extraídas). 
+A semelhança entre as descrições é calculada utilizando a combinação do `CountVectorizer` (para extração de características) e o KNN (para o cálculo da semelhança de acordo com as características extraídas). 
 
 A seguir é explicado o processo de análise da base de dados original (**2. Análise Exploratória**), a modelagem do sistema de recomendação (**3. Sistema de Recomendação**) e um manual de uso do aplicativo beta criado (**4. Aplicativo**).
 
@@ -56,9 +55,9 @@ Na base de dados original foram encontradas os seguintes registro de valores nul
 
 As colunas `Unnamed:0 `, `designation`, `region_1` e `region_2` foram removidas da base de dados do modelo de recomendação. Pois, estas variáveis além de terem um quantitativo expressivo de falhas e inviabilidade para preenchimento das mesmas não apresentam informação relevante para o modelo de recomendação.
 
-Foram removidos os registros que não tinham informação do país de origem e da variedade de uvas utilzada para a produção do vinho. As falhas na coluna de preços foram preenchidas com o valor médio dos preços, já que o quantitativo de falhas nesta coluna não é tão expressivo apenas 6.92%.
+Foram removidos os registros que não tinham informação do país de origem e da variedade de uvas utilizada para a produção do vinho. As falhas na coluna de preços foram preenchidas com o valor médio dos preços, já que o quantitativo de falhas nesta coluna não é tão expressivo apenas 6.92%.
 
-As duas colunas referentes aos avaliadores também foram removida da base de dados utilizada para alimentar o sistema de recomendação.
+As duas colunas referentes aos avaliadores também foram removidas da base de dados utilizada para alimentar o sistema de recomendação.
 
 #### 2.2 Tratamento de dados duplicados
 
@@ -74,7 +73,7 @@ O vinho mais caro do dataset é o Château les Ormes Sorbet 2013 Médoc. Este vi
 
 ##### 2.3.2 Qual o vinho mais barato?
 
-O vinho mais barato do dataset é o Bandit NV Chardonnay (California). Ele é produzido na Califórina nos Estados Unidos. Têm um preço sugerido de U$S 4.00 e sua avaliação é de 86 pontos. A variade de uvas utilizada é a Merlot e a vinícola é a Bandit.
+O vinho mais barato do dataset é o Bandit NV Chardonnay (California). Ele é produzido na Califórina nos Estados Unidos. Têm um preço sugerido de U$S 4.00 e sua avaliação é de 86 pontos. A variedade de uvas utilizada é a Merlot e a vinícola é a Bandit.
 
 ##### 2.3.3 Qual o especialista avaliou mais vinhos?
 
@@ -86,7 +85,7 @@ A província de Südburgenland na Áustria têm a melhor avaliação média, 94 
 
 ##### 2.3.5 Qual a província têm os vinhos com a menor média de preços?
 
-Os vinhos produzindos em Viile Timisului na Romênia têm a menor média de preços. Contudo no dataset consta apenas um único exemplar de vinho produzido nesta região que é o Cramele Recas de 2014 cujo preço sugerido é de U$S 7.00.
+Os vinhos produzidos em Viile Timisului na Romênia têm a menor média de preços. Contudo no dataset consta apenas um único exemplar de vinho produzido nesta região que é o Cramele Recas de 2014 cujo preço sugerido é de U$S 7.00.
 
 ##### 2.3.6 Quais os vinhos com as melhores e piores avaliações?
 
@@ -95,12 +94,12 @@ Os vinhos com piores avaliações (todos com nota de 80) são: Cooper Vineyards 
 
 ##### 2.3.7 Qual a distribuição das avaliações? Quantas avaliações um vinho recebe?
 
-Observando o histograma abaixo percebe-se que a maioria dos vinhos têm apenas uma única avaliação. Isto pode ser um fator que possa gerar uma avaliação enviesada do modelo.
+Observando o histograma abaixo se percebe que a maioria dos vinhos têm apenas uma única avaliação. Isto pode ser um fator que possa gerar uma avaliação enviesada do modelo.
 ![histograma da distribuição das avaliações](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_evaluations.png?raw=true "Histograma do número de avaliações por vinho")
 
 ##### 2.3.8 Distribuição espacial dos registros.
 
-O dataset possui o registro de 43 países. Os 10 países com maior quantidade de vinhos registrada é exibido no gráfico abaixo. França e Itália conhecidas por produzirem vinhos de excelente qualidade ocupam a 2ª e 3ª posição respectivamente, ficando atrás dos Estados Unidos. Como o dataset foi coletado de uma base america é normal que existam mais registro para o referido país do que para os demais.
+O dataset possui o registro de 43 países. Os 10 países com maior quantidade de vinhos registrada é exibido no gráfico abaixo. França e Itália conhecidas por produzirem vinhos de excelente qualidade ocupam a 2ª e 3ª posição respectivamente, ficando atrás dos Estados Unidos. Como o dataset foi coletado de uma base americana é normal que existam mais registro para o referido país do que para os demais.
 ![Países mais comuns do dataset](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/top_10_coutries_by_production.jpeg?raw=true "Países mais comuns do dataset")
 
 ##### 2.3.9 Distribuição dos estilos de vinho
@@ -114,12 +113,12 @@ Vinhos tintos (`Red`) são o estilo mais comum no dataset em seguida estão os b
 
 ##### 2.3.10 Distribuição dos preços dos vinhos
 
-Os preços de vinhos variam entre U$S 4.00 e U$S 3300.00. Porém a distribuição não é uniforme com a maioria dos preços concentrada abaixo dos U$S 100.00. Para poder visualizar melhor a distribuição dos preços (gráfico abaixo) foi utilizada a escala logarítimica no eixo X. O pico apresentado no gráfico corresponde a preços em torno de U$S 35.00.
+Os preços de vinhos variam entre U$S 4.00 e U$S 3300.00. Porém a distribuição não é uniforme com a maioria dos preços concentrada abaixo dos U$S 100.00. Para poder visualizar melhor a distribuição dos preços (gráfico abaixo) foi utilizada a escala logarítmica no eixo X. O pico apresentado no gráfico corresponde a preços em torno de U$S 35.00.
 ![Distribuição dos preços dos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_prices.png?raw=true "Distribuição dos preços dos vinhos")
 
 ##### 2.3.11 Distribuição das notas dos vinhos
 
-As notas dos vinhos variam entr 80 e 100 pontos com mediana aproximada de 88 pontos. As notas são dadas em um intervalo discreto, apenas valores inteiros são utilizados como nota. Aparentemente a distribuição das notas se adequa bem a uma distribuição normal, o que indica que pode não haver um viés de avaliação no conjunto de dados. Média e media estão bem próximas de 88 pontos.
+As notas dos vinhos variam entre 80 e 100 pontos com mediana aproximada de 88 pontos. As notas são dadas em um intervalo discreto, apenas valores inteiros são utilizados como nota. Aparentemente a distribuição das notas se adéqua bem a uma distribuição normal, o que indica que pode não haver um viés de avaliação no conjunto de dados. Média e media estão bem próximas de 88 pontos.
 ![Distribuição das notas dos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_points.png?raw=true "Distribuição das notas dos vinhos")
 
 Considerando-se a mediana dos boxplots apresentados na figura a seguir os vinhos "Light-Bodied Rede Wines" tendem a ter melhores avaliações que os demais. E os "Rosé Wines" têm a menor mediana de avaliações. Em geral os vinhos tinto costumam ter melhores avaliações que os vinhos brancos.
@@ -127,10 +126,20 @@ Considerando-se a mediana dos boxplots apresentados na figura a seguir os vinhos
 
 ##### 2.3.12 Quais os adjetivos mais comuns utilizados pelos avaliadores?
 
-A nuvem de palavras a seguir ilustra alguns dos termos mais utilizados pelos avaliadorea para se referir aos vinhos avaliados. Full bodi, refere-se aos estilos dos vinhos como observado pelas análises anterioes os vinhos com estilo "full-bodied" tanto tintos quanto brancos são os mais comuns do dataset por isto é esperado que este seja um dos termos mais comuns. Sabores relacionados a frutas (fruit flavor, black fruit, black cherri) também são destaque em especial porque a maioria dos vinhos é do tipo tinto. carbernet Sauvignon é uma das variedades de uvas mais utilizadas na produção de vinhos.
+A nuvem de palavras a seguir ilustra alguns dos termos mais utilizados pelos avaliadores para se referir aos vinhos avaliados. Full bodi, refere-se aos estilos dos vinhos como observado pelas análises anteriores os vinhos com estilo "full-bodied" tanto tintos quanto brancos são os mais comuns do dataset por isto é esperado que este seja um dos termos mais comuns. Sabores relacionados a frutas (fruit flavor, black fruit, black cherri) também são destaque em especial porque a maioria dos vinhos é do tipo tinto. carbernet Sauvignon é uma das variedades de uvas mais utilizadas na produção de vinhos.
 ![Nuvem de palavras mais comuns para se referir aos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/wines_description_wordcloud.png?raw=true "Nuvem de palavras mais comuns para se referir aos vinhos")
 
 ### 3. Sistema de Recomendação
+
+Para o sistema de recomendação foram testados dos métodos para a extração de características das descrições dos vinhos: Tfidf Vectorizer e Count Vectorizer. Foi realizado um preprocessamento nos textos para remoção de stopwords, pontuação e sufixos das palavras. Para o cálculo da similaridade entre os textos foi utilizado o método de KNN tendo a distância cosseno como métrica de semelhança.
+
+#### 3.1 Pré-processamento das descrições
+
+Foram removidos da base de dados todos os títulos que não foram classificados em um dos estilos de vinho ficando um total de 117.236 registros. Os textos das descrições foram normalizados para que todas as palavras ficassem e minúsculas. Utilizou-se o pacote NLTK para realizar a criação de tokens e remoção de pontuação. Foi utilizada a lista de stopwords do NLTK. E o `PorterStemmer` para realizar a remoção de sufixos das palavras. O dataset foi dividido em duas partes a primeira `wines_recomendation_system.csv` contém apenas os títulos e a descrição dos mesmos preprocessada e é utilizada como input do algoritmo de recomendação. A segunda `wines_user_consul.csv` contém o título, a descrição original, país, província, nota, preço, variedade, vinícola e estilo do vinho; esta será a base de dados a qual o usuário interagirá.
+
+#### 3.2 Algoritmos de recomendação
+
+#### 3.2.1 Tfif Vectorizer
 
 ### 4. Aplicativo
 
