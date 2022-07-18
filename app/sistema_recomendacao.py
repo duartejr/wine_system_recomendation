@@ -57,8 +57,8 @@ selected_data = select_data(data, styles, countries, points, price_interval,
 st.table(selected_data.head(5)) # Shows the table
 
 # -- Recomeded wines --
-st.subheader('We recomend these wines for you')
-st.write('Chose a wine to see its description and more wine related with him.')
+st.subheader('WYNER recommends these wines for you')
+st.write('Choose a wine to see its description and more wine related with him.')
 
 # wine that will be used as the input for the recomendation system
 wine_selected = st.selectbox('Chose a wine:', selected_data['title'].head(5)) 
