@@ -96,11 +96,39 @@ Os vinhos com piores avaliações (todos com nota de 80) são: Cooper Vineyards 
 ##### 2.3.7 Qual a distribuição das avaliações? Quantas avaliações um vinho recebe?
 
 Observando o histograma abaixo percebe-se que a maioria dos vinhos têm apenas uma única avaliação. Isto pode ser um fator que possa gerar uma avaliação enviesada do modelo.
-![histograma da distribuição das avaliações](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_points.png?raw=true "Text to show on mouseover").
+![histograma da distribuição das avaliações](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_evaluations.png?raw=true "Histograma do número de avaliações por vinho")
 
 ##### 2.3.8 Distribuição espacial dos registros.
 
 O dataset possui o registro de 43 países. Os 10 países com maior quantidade de vinhos registrada é exibido no gráfico abaixo. França e Itália conhecidas por produzirem vinhos de excelente qualidade ocupam a 2ª e 3ª posição respectivamente, ficando atrás dos Estados Unidos. Como o dataset foi coletado de uma base america é normal que existam mais registro para o referido país do que para os demais.
+![Países mais comuns do dataset](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/top_10_coutries_by_production.jpeg?raw=true "Países mais comuns do dataset")
+
+##### 2.3.9 Distribuição dos estilos de vinho
+
+No seguinte site (https://winefolly.com/tips/the-9-major-wine-styles/) são listados os 9 principais estilos de vinho. Com base nesta informação os vinhos do dataset foram classificados de acordo seu estilo. Algumas vaiedades de vinhos foram classificadas a partir do site referido anteriormente e outras foram classificadas após extensa pesquisa na internet algumas fontes consultadas foram: vivino, wine.com, wineparadigm.com, virginwines, winefolly, winebody, vinello...
+
+A seguir é exibida a distribuição dos vinhos mais comumns no dataset por estilo.
+![Distribuição dos estilos de vinhos do dataset](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/most_common_wine_styles.png?raw=true "Distribuição dos vinhos do dataset por estilo")
+
+Vinhos tintos (`Red`) são o estilo mais comum no dataset em seguida estão os brancos (`white`). Quanto a subcategoria os tintos encorpados (`full-bodied red wines`) estão são os que têm a maior quantidade de títulos no dataset e em seguida estão os Brancos secos (`Light-Bodied White Wines`). Vinhos do tipo Rosé e espumantes são os estilos com a menor quantidade de títulos registrada.
+
+##### 2.3.10 Distribuição dos preços dos vinhos
+
+Os preços de vinhos variam entre U$S 4.00 e U$S 3300.00. Porém a distribuição não é uniforme com a maioria dos preços concentrada abaixo dos U$S 100.00. Para poder visualizar melhor a distribuição dos preços (gráfico abaixo) foi utilizada a escala logarítimica no eixo X. O pico apresentado no gráfico corresponde a preços em torno de U$S 35.00.
+![Distribuição dos preços dos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_prices.png?raw=true "Distribuição dos preços dos vinhos")
+
+##### 2.3.11 Distribuição das notas dos vinhos
+
+As notas dos vinhos variam entr 80 e 100 pontos com mediana aproximada de 88 pontos. As notas são dadas em um intervalo discreto, apenas valores inteiros são utilizados como nota. Aparentemente a distribuição das notas se adequa bem a uma distribuição normal, o que indica que pode não haver um viés de avaliação no conjunto de dados. Média e media estão bem próximas de 88 pontos.
+![Distribuição das notas dos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/hist_wine_points.png?raw=true "Distribuição das notas dos vinhos")
+
+Considerando-se a mediana dos boxplots apresentados na figura a seguir os vinhos "Light-Bodied Rede Wines" tendem a ter melhores avaliações que os demais. E os "Rosé Wines" têm a menor mediana de avaliações. Em geral os vinhos tinto costumam ter melhores avaliações que os vinhos brancos.
+![Distribuição das notas por estilo de vinho](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/boxplot_wine_points_by_style.png?raw=true "Distribuição das notas por estilo de vinho")
+
+##### 2.3.12 Quais os adjetivos mais comuns utilizados pelos avaliadores?
+
+A nuvem de palavras a seguir ilustra alguns dos termos mais utilizados pelos avaliadorea para se referir aos vinhos avaliados. Full bodi, refere-se aos estilos dos vinhos como observado pelas análises anterioes os vinhos com estilo "full-bodied" tanto tintos quanto brancos são os mais comuns do dataset por isto é esperado que este seja um dos termos mais comuns. Sabores relacionados a frutas (fruit flavor, black fruit, black cherri) também são destaque em especial porque a maioria dos vinhos é do tipo tinto. carbernet Sauvignon é uma das variedades de uvas mais utilizadas na produção de vinhos.
+![Nuvem de palavras mais comuns para se referir aos vinhos](https://github.com/duartejr/wine_system_recomendation/blob/main/data/output_images/wines_description_wordcloud.png?raw=true "Nuvem de palavras mais comuns para se referir aos vinhos")
 
 ### 3. Sistema de Recomendação
 
